@@ -1,4 +1,4 @@
-import { authRouter } from "./auth-router";
+import { authRouter } from "./auth-router.js";
 import { createRouter, publicQuery } from "./middleware";
 import { discordRouter } from "./discord-router";
 import { ordersRouter } from "./orders-router";
