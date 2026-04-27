@@ -7,7 +7,7 @@ import { appRouter } from "./router.js";
 import { createContext } from "./context.js";
 import { env } from "./lib/env.js";
 import { createOAuthCallbackHandler } from "./kimi/auth.js";
-import { Paths } from "@contracts/constants";
+import { Paths } from "../contracts/constants.js";
 
 import { createDiscordOAuthCallbackHandler } from "./discord-auth.js";
 
