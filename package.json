@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && esbuild api/boot.ts --platform=node --bundle --format=esm --outdir=dist --alias:@contracts=./contracts --alias:@db=./db --alias:db=./db --banner:js=\"import { createRequire } from 'module';const require = createRequire(import.meta.url);\"",
+    "build": "vite build && esbuild api/boot.ts --platform=node --bundle --format=esm --outdir=dist --alias:@contracts=./contracts --alias:@db=./db --alias:db=./db --banner:js=\"import { createRequire } from 'module';const require = createRequire(import.meta.url);\" && esbuild bot/index.ts --platform=node --bundle --format=esm --outfile=dist/bot.js --alias:@contracts=./contracts --alias:@db=./db --alias:db=./db --banner:js=\"import { createRequire } from 'module';const require = createRequire(import.meta.url);\"",
     "lint": "eslint .",
     "preview": "vite preview",
-    "bot": "tsx bot/index.ts",
+    "bot": "node dist/bot.js",
     "start": "NODE_ENV=production node dist/boot.js",
     "check": "tsc -b",
     "format": "prettier --write .",
