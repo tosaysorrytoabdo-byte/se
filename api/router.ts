@@ -1,5 +1,5 @@
 import { authRouter } from "./auth-router.js";
-import { createRouter, publicQuery } from "./middleware";
+import { createRouter, publicQuery } from "./middleware.js";
 import { discordRouter } from "./discord-router";
 import { ordersRouter } from "./orders-router";
 import { ticketsRouter } from "./tickets-router";
