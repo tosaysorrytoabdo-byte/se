@@ -1,26 +1,28 @@
 {
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.server.json"
+    }
+  ],
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "outDir": "dist",
-    "rootDir": ".",
-    "strict": false,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@db/*": ["db/*"],
-      "@contracts/*": ["contracts/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@contracts/*": [
+        "./contracts/*"
+      ],
+      "@db/*": [
+        "./db/*"
+      ]
     }
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "api/**/*.ts", "bot/**/*.ts", "contracts/**/*.ts", "db/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  }
 }
