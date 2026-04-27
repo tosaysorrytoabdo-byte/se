@@ -8,18 +8,8 @@
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "@db/*": ["db/*"],
-      "@contracts/*": ["contracts/*"]
-    }
+    "baseUrl": "."
   },
-  "include": [
-    "api/**/*.ts",
-    "bot/**/*.ts",
-    "db/**/*.ts",
-    "contracts/**/*.ts"
-  ],
+  "include": ["api/**/*.ts", "bot/**/*.ts", "db/**/*.ts", "contracts/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
