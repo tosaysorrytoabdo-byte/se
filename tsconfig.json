@@ -1,15 +1,25 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "Node16",
-    "moduleResolution": "Node16",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "outDir": "dist",
     "rootDir": ".",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@db/*": ["db/*"],
+      "@contracts/*": ["contracts/*"]
+    }
   },
-  "include": ["api/**/*.ts", "bot/**/*.ts"],
+  "include": [
+    "api/**/*.ts",
+    "bot/**/*.ts",
+    "db/**/*.ts",
+    "contracts/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
