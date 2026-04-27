@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": false,
+    "jsx": "preserve",
+    "lib": ["ES2022"]
+  },
+  "include": ["api/**/*.ts", "bot/**/*.ts", "contracts/**/*.ts", "db/**/*.ts"],
+  "exclude": ["node_modules", "dist", "src"]
+}
