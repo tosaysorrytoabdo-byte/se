@@ -358,3 +358,6 @@ export async function startBot() {
 }
 
 export { client };
+
+// Start the bot
+startBot().catch(console.error);
