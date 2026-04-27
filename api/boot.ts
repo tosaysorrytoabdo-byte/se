@@ -16,11 +16,9 @@ app.use(bodyLimit({ maxSize: 50 * 1024 * 1024 }));
 
 app.get(Paths.oauthCallback, createOAuthCallbackHandler());
 
-// ❌ خطأ: لا تستخدم await هنا
-app.get(
-  "/api/discord/oauth/callback",
-  createDiscordOAuthCallbackHandler()
-);
+// ✅ الحل الصحيح لمشكلة Promise handler
+const discordHandler = await createDiscordOAuthCallbackHandler();
+app.get("/api/discord/oauth/callback", discordHandler);
 
 app.use("/api/trpc/*", async (c) => {
   return fetchRequestHandler({
