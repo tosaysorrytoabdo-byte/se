@@ -28,6 +28,23 @@ app.all("/api/*", (c) => c.json({ error: "Not Found" }, 404));
 export default app;
 
 if (env.isProduction) {
+  // Auto-push database schema on startup
+  try {
+    const { exec } = await import("child_process");
+    const { promisify } = await import("util");
+    const execAsync = promisify(exec);
+    console.log("Pushing database schema...");
+    const { stdout, stderr } = await execAsync(
+      "npx drizzle-kit push --config=drizzle.config.ts --force",
+      { env: { ...process.env } }
+    );
+    if (stdout) console.log(stdout);
+    if (stderr) console.log(stderr);
+    console.log("✅ Database schema ready");
+  } catch (err) {
+    console.error("⚠️ DB push warning:", err);
+  }
+
   const { serve } = await import("@hono/node-server");
   const { serveStaticFiles } = await import("./lib/vite");
   serveStaticFiles(app);
